@@ -3,10 +3,10 @@
   "title": "XClassJS",
   "description": "An eXtension on simple Class inheritance in JavaScript, from John Resig.",
   "version": "0.1.0",
-  "homepage": "http://1nside0ut.com/WingsJS/",
+  "homepage": "http://1nside0ut.com/XClassJS/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1nside0ut/WingsJS.git"
+    "url": "git+https://github.com/1nside0ut/XClassJS.git"
   },
   "author": "manuelbarzi",
   "license": "MIT",

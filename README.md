@@ -2,4 +2,4 @@
 
 #### An eXtension on simple Class inheritance in JavaScript, from John Resig.
 
-##### Usage: TODO
+Inspect the code demo examples at http://1nside0ut.com/XClassJS/

@@ -1,16 +1,16 @@
 /**
- * _titl
+ * XClassJS
  * 
- * _desc
+ * An eXtension on simple Class inheritance in JavaScript, from John Resig.
  * 
  * It upgrades the original code, providing the capability to correctly
  * determine the type of an instance within the inheritance tree, by means of
  * 'an onymous' constructor (in other words, 'init' being a named function
  * within a class implementation).
  * 
- * @version _ver
+ * @version 0.1.0
  * 
- * @author _auth
+ * @author manuelbarzi
  */
 var Class;
 (function() {
