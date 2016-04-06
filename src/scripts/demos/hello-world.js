@@ -1,6 +1,6 @@
 (function() {
 
-	console.log('// hello world demo');
+	console.log('// hello world');
 
 	/**
 	 * HelloWorld class.

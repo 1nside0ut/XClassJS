@@ -1,6 +1,6 @@
 (function() {
 
-	console.log('// sweet animals demo');
+	console.log('// sweet animals');
 
 	/**
 	 * Animal class.
