@@ -3,7 +3,8 @@
   font-family: 'Sansation Light';
   src: url(../fonts/sansation-light.woff); }
 * {
-  font-family: "Sansation Light", Lobster, arial, cursive; }
+  font-family: "Sansation Light", Lobster, arial, cursive;
+  font-weight: bold; }
 
 html {
   height: 100%; }
