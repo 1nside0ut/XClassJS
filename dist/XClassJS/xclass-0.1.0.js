@@ -89,3 +89,8 @@ var Class;
 	};
 
 })();
+
+// export
+
+if (module)
+	module.exports = Class;
