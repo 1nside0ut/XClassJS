@@ -92,5 +92,5 @@ var Class;
 
 // export
 
-if (module)
+if (typeof module !== 'undefined')
 	module.exports = Class;
