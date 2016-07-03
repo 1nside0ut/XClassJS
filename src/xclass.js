@@ -36,8 +36,8 @@ var Class;
 		// Copy the properties over onto the new prototype
 		for ( var name in prop) {
 			// Check if we're overwriting an existing function
-			prototype[name] = typeof prop[name] == "function"
-					&& typeof _super[name] == "function"
+			prototype[name] = typeof prop[name] == 'function'
+					&& typeof _super[name] == 'function'
 					&& fnTest.test(prop[name]) ? (function(name, fn) {
 				return function() {
 					var tmp = this._super;
@@ -92,5 +92,5 @@ var Class;
 
 // export
 
-if (typeof module !== 'undefined')
+if (typeof module === 'object' && module.exports)
 	module.exports = Class;
