@@ -8,7 +8,7 @@
  * 'an onymous' constructor (in other words, 'init' being a named function
  * within a class implementation).
  * 
- * @version 0.1.0
+ * @version 0.0.1
  * 
  * @author manuelbarzi
  */
