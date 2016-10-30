@@ -1,182 +1,98 @@
 <html>
-<head>
-<meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
-<meta content='utf-8' http-equiv='encoding'>
-<meta charset='utf-8' />
-<title>_titl - _desc</title>
-<link rel='shortcut icon' sizes='any' type='image/ico'
-	href='favicon.ico'>
-<link rel='stylesheet' href='styles/main.css'>
-<script type='text/javascript' src='_nam-_ver.min.js'></script>
-<script type='text/javascript' src='scripts/libs/js.js'></script>
-<script type='text/javascript' src='scripts/libs/easy.js'></script>
-<script type='text/javascript' src='main.js'></script>
-<script type='text/javascript' src='scripts/demos/hello-world.js'></script>
-<script type='text/javascript' src='scripts/demos/sweet-animals.js'></script>
-</head>
-<body>
-	<div id='content' style='display: none'>
-
-		<div class='space'></div>
-
-		<h1>_titl</h1>
-
-		<div class='space'></div>
-
-		<h2>
+	<head>
+		<meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+		<meta content='utf-8' http-equiv='encoding'>
+		<meta charset='utf-8' />
+		<title>_titl - _desc</title>
+		<link rel='shortcut icon' sizes='any' type='image/ico' href='favicon.ico'>
+		<link rel='stylesheet' href='styles/main.css'>
+		<script type='text/javascript' src='_nam-_ver.min.js'></script>
+		<script type='text/javascript' src='scripts/libs/js.js'></script>
+		<script type='text/javascript' src='scripts/libs/easy.js'></script>
+		<script type='text/javascript' src='main.js'></script>
+		<script type='text/javascript' src='scripts/demos/hello-world.js'></script>
+		<script type='text/javascript' src='scripts/demos/sweet-animals.js'></script>
+		<!-- 
+		<script type='text/javascript' src='scripts/demos/inheritance.js'></script>
+		 -->
+	</head>
+	<body>
+		<div id='content' style='display: none'>
+			<div class='space'></div>
+			<h1>_titl</h1>
+			<div class='space'></div>
+			<h2>
 			An eXtension on simple Class inheritance in JavaScript, from <a
 				href='http://ejohn.org/blog/simple-javascript-inheritance/'
 				target='_blank'>John Resig</a>.
 		</h2>
-
-		<div class='space'></div>
-
-		<h3>Hello World</h3>
-
-		<div class='thin'></div>
-
-		<p class='col'>The ubiquitous example... just to start with the
-			presentation of Class use. This class just takes a salutation as an
-			argument and outputs it by means of salute() method.</p>
-
-		<div class='thin'></div>
-
-		<img src='images/hello-world.png'>
-
-		<div class='thin'></div>
-
-		<p class='col'>
-			Inspect the demo code running this class <a
-				href='scripts/demos/hello-world.js' target='_blank'>here</a>, and
-			open the JavaScript console to see the output.
-		</p>
-
-		<div class='space'></div>
-
-		<h3>Sweet Animals</h3>
-
-		<div class='thin'></div>
-
-		<p class='col'>
-			This is a quite common example too, but enough to show the little
-			'sweet' that <a href='_nam-_ver.js' target='_blank'>_titl</a> brings,
-			with respect to the <a href='scripts/libs/class.js' target='_blank'>original
+			<div class='space'></div>
+			<h3>Hello World</h3>
+			<div class='thin'></div>
+			<p class='col'>The ubiquitous example... just to start with the presentation of Class use. This class just takes a salutation as an argument and outputs it by means of salute() method.</p>
+			<div class='thin'></div>
+			<img src='images/hello-world.png'>
+			<div class='thin'></div>
+			<p class='col'>
+				Inspect the demo code running this class <a href='scripts/demos/hello-world.js' target='_blank'>here</a>, and open the JavaScript console to see the output.
+			</p>
+			<div class='space'></div>
+			<h3>Sweet Animals</h3>
+			<div class='thin'></div>
+			<p class='col'>
+				This is a quite common example too, but enough to show the little 'sweet' that <a href='_nam-_ver.js' target='_blank'>_titl</a> brings, with respect to the <a href='scripts/libs/class.js' target='_blank'>original
 				implementation</a>.
-		</p>
-
-		<div class='thin'></div>
-
-		<img src='images/animals-animal.png'>
-
-		<div class='thin'></div>
-
-		<img src='images/animals-lion.png'>
-
-		<div class='thin'></div>
-
-		<img src='images/animals-dog.png'>
-
-		<div class='thin'></div>
-
-		<p class='col'>Now see the following function, prepared to
-			correctly determine the class type of an object from its constructor:
-		</p>
-
-		<div class='thin'></div>
-
-		<img src='images/exact-type.png'>
-
-		<div class='thin'></div>
-
-		<p class='col'>
-			When running it on animal object instances, the results are coherent:<br>
-			<br> - in case of a Lion object (var lion = new Lion()),
-			typeOf(lion) returns 'Lion'<br> <br> - in case of a Dog
-			object (var dog = new Dog()), typeOf(dog) returns 'Dog'<br> <br>
-			That's because _titl takes into account the name of the constructor
-			function, defined in the 'init' method (see the classes defined
-			above). And as the constructive function it is, this advantage is
-			taken to perfectly typify an object during its instantiation, and
-			later on discover its type with assertion.<br> <br>Now,
-			when running the <a href='scripts/demos/sweet-animals.js'
-				target='_blank'>demo code</a> (see output at JavaScript console) for
-			these examples with _titl, the results for the type-of discovering
-			function are coherent. In other words, the type of the instances is
-			exactly determined:
-		</p>
-
-		<div class='thin'></div>
-
-		<img src='images/xclass-succeeds.png'>
-
-		<div class='thin'></div>
-
-		<p class='col'>
-			But, when running the <a href='scripts/demos/sweet-animals.js'
-				target='_blank'>demo code</a> for these examples with the original <a
-				href='scripts/libs/class.js' target='_blank'>Class</a>., then the
-			results for the type-of discovering function are not coherent (result
-			false), that is, the exact type of the instances cannot be correctly
-			determined:
-		</p>
-
-		<div class='thin'></div>
-
-		<img src='images/class-fails.png'>
-
-		<div class='space'></div>
-
-		<h3>Then...</h3>
-
-		<div class='thin'></div>
-
-		<p class='col'>This "lil sweet" capability of _titl provides an
-			extra power to the original code, allowing the coder to exactly catch
-			the type of an object within the inheritance tree, close - for
-			instance - to Java with the obj.getClass().getName() flow.</p>
-
-		<div class='thin'></div>
-
-		<p class='col'>
-			To achieve this, the original code was modified to dynamically assign
-			the name of the 'init' constructor to a named function that finally
-			wraps the whole logic of the construction process. This new
-			implementation can be inspected <a href='_nam-_ver.js'
-				target='_blank'>here</a>.
-		</p>
-
-		<div class='thin'></div>
-
-		<p class='col'>As can be seen, it makes use of 'eval' to perform
-			that dynamism, and despite the use of 'eval' is quite discouraged in
-			most cases, in this situation, in which it only runs during the
-			instantiation of a class (not an 'object' of that class itself), it
-			suits to accomplish the desired goal.</p>
-
-		<div class='thin'></div>
-
-		<p class='col'>Finally, it's worth mentioning that the implication
-			it has this projection in code is the use of a named function for
-			the 'init' constructor. On the other hand this requirement satisfies
-			the coherence in that the constructor does not only contributes to an
-			object instantiation, but also to its type definition ;)</p>
-
-		<div class='space'></div>
-
-		<img src='images/home.svg' width='16px'> <a
-			href='http://1nside0ut.com/_nam-js/' target='_blank'>http://1nside0ut.com/_nam-js/</a>
-
-		<div class='thin'></div>
-
-		<img src='images/github.png' width='16px'> <a
-			href='http://github.com/1nside0ut/_nam-js' target='_blank'>http://github.com/1nside0ut/_nam-js</a>
-			
-		<div class='thin'></div>
-			
-		<img src='images/npm.png' width='16px'> <a
-			href='http://www.npmjs.com/package/_nam-js' target='_blank'>http://www.npmjs.com/package/_nam-js</a>
-
-		<div class='space'></div>
-	</div>
-</body>
+			</p>
+			<div class='thin'></div>
+			<img src='images/animals-animal.png'>
+			<div class='thin'></div>
+			<img src='images/animals-lion.png'>
+			<div class='thin'></div>
+			<img src='images/animals-dog.png'>
+			<div class='thin'></div>
+			<p class='col'>Now see the following function, prepared to correctly determine the class type of an object from its constructor:
+			</p>
+			<div class='thin'></div>
+			<img src='images/exact-type.png'>
+			<div class='thin'></div>
+			<p class='col'>
+				When running it on animal object instances, the results are coherent:
+				<br>
+				<br> - in case of a Lion object (var lion = new Lion()), typeOf(lion) returns 'Lion'
+				<br>
+				<br> - in case of a Dog object (var dog = new Dog()), typeOf(dog) returns 'Dog'
+				<br>
+				<br> That's because _titl takes into account the name of the constructor function, defined in the 'init' method (see the classes defined above). And as the constructive function it is, this advantage is taken to perfectly typify an object during its instantiation, and later on discover its type with assertion.
+				<br>
+				<br>Now, when running the <a href='scripts/demos/sweet-animals.js' target='_blank'>demo code</a> (see output at JavaScript console) for these examples with _titl, the results for the type-of discovering function are coherent. In other words, the type of the instances is exactly determined:
+			</p>
+			<div class='thin'></div>
+			<img src='images/xclass-succeeds.png'>
+			<div class='thin'></div>
+			<p class='col'>
+				But, when running the <a href='scripts/demos/sweet-animals.js' target='_blank'>demo code</a> for these examples with the original <a href='scripts/libs/class.js' target='_blank'>Class</a>., then the results for the type-of discovering function are not coherent (result false), that is, the exact type of the instances cannot be correctly determined:
+			</p>
+			<div class='thin'></div>
+			<img src='images/class-fails.png'>
+			<div class='space'></div>
+			<h3>Then...</h3>
+			<div class='thin'></div>
+			<p class='col'>This "lil sweet" capability of _titl provides an extra power to the original code, allowing the coder to exactly catch the type of an object within the inheritance tree, close - for instance - to Java with the obj.getClass().getName() flow.</p>
+			<div class='thin'></div>
+			<p class='col'>
+				To achieve this, the original code was modified to dynamically assign the name of the 'init' constructor to a named function that finally wraps the whole logic of the construction process. This new implementation can be inspected <a href='_nam-_ver.js' target='_blank'>here</a>.
+			</p>
+			<div class='thin'></div>
+			<p class='col'>As can be seen, it makes use of 'eval' to perform that dynamism, and despite the use of 'eval' is quite discouraged in most cases, in this situation, in which it only runs during the instantiation of a class (not an 'object' of that class itself), it suits to accomplish the desired goal.</p>
+			<div class='thin'></div>
+			<p class='col'>Finally, it's worth mentioning that the implication it has this projection in code is the use of a named function for the 'init' constructor. On the other hand this requirement satisfies the coherence in that the constructor does not only contributes to an object instantiation, but also to its type definition ;)</p>
+			<div class='space'></div>
+			<img src='images/home.svg' width='16px'> <a href='http://1nside0ut.com/_nam-js/' target='_blank'>http://1nside0ut.com/_nam-js/</a>
+			<div class='thin'></div>
+			<img src='images/github.png' width='16px'> <a href='http://github.com/1nside0ut/_nam-js' target='_blank'>http://github.com/1nside0ut/_nam-js</a>
+			<div class='thin'></div>
+			<img src='images/npm.png' width='16px'> <a href='http://www.npmjs.com/package/_nam-js' target='_blank'>http://www.npmjs.com/package/_nam-js</a>
+			<div class='space'></div>
+		</div>
+	</body>
 </html>
