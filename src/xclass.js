@@ -24,7 +24,7 @@ var Class;
 	Class = function Class() {};
 
 	// Create a new Class that inherits from this class
-	Class.extend = function(prop) {
+	Class.extend = function(body) {
 
 		// Instantiate a base class (but only create the instance,
 		// don't run the init constructor)
@@ -34,9 +34,9 @@ var Class;
 		initializing = false;
 
 		// Copy the properties over onto the new prototype
-		for (var name in prop) {
+		for (var member in body) {
 			// Check if we're overwriting an existing function
-			prototype[name] = prop[name];
+			prototype[member] = body[member];
 		}
 
 		// The dummy class constructor
@@ -56,7 +56,7 @@ var Class;
 		// time it is declared; See https://
 		// developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name
 		eval('Class = function ' +
-			(prop.init && prop.init.name ? prop.init.name : 'Class') +
+			(body.init && body.init.name ? body.init.name : 'Class') +
 			'() { construct.apply(this, arguments); };');
 
 		// Populate our constructed prototype object
