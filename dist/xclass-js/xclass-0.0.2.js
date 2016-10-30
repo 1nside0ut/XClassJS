@@ -6,7 +6,12 @@
  * It upgrades the original code, providing the capability to correctly
  * determine the type of an instance within the inheritance tree, by means of
  * 'an onymous' constructor (in other words, 'init' being a named function
- * within a class implementation).
+ * within a class implementation). It also improves inheritance, providing the 
+ * extending classes full access to super class members by means of a new inner
+ * field _super (a reference to the parent prototype, instead of a function
+ * wrapping an overriden method), something that was not possible in the original 
+ * code, which only limited to provide _super as a function to the overriden method, 
+ * but not the full parent class scope.
  * 
  * @version 0.0.2
  * 
