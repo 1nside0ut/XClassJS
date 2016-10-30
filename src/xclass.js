@@ -3,15 +3,10 @@
  * 
  * _desc
  * 
- * It upgrades the original code from John Resig, providing the capability to 
- * correctly determine the type of an instance within the inheritance tree, by 
- * means of 'an onymous' constructor (in other words, 'init' being a named function
- * within a class implementation). It also improves inheritance, providing the 
- * extending classes full access to super class members by means of a new inner
- * field _super (a reference to the parent prototype, instead of a function
- * wrapping an overriden method), something that was not possible in the original 
- * code, which only limited to provide _super as a function to the overriden method, 
- * but not the full parent class scope.
+ * It upgrades the original code, providing the capability to correctly
+ * determine the type of an instance within the inheritance tree, by means of
+ * 'an onymous' constructor (in other words, 'init' being a named function
+ * within a class implementation).
  * 
  * @version _ver
  * 
@@ -30,18 +25,35 @@ var Class;
 
 	// Create a new Class that inherits from this class
 	Class.extend = function(body) {
+		var _super = this.prototype;
 
 		// Instantiate a base class (but only create the instance,
 		// don't run the init constructor)
 		initializing = true;
 		var prototype = new this();
-		prototype._super = this.prototype;
 		initializing = false;
 
 		// Copy the properties over onto the new prototype
 		for (var member in body) {
 			// Check if we're overwriting an existing function
-			prototype[member] = body[member];
+			prototype[member] = typeof body[member] == 'function' &&
+				typeof _super[member] == 'function' &&
+				fnTest.test(body[member]) ? (function(member, fn) {
+					return function() {
+						var tmp = this._super;
+
+						// Add a new ._super() method that is the same method
+						// but on the super-class
+						this._super = _super[member];
+
+						// The method only need to be bound temporarily, so we
+						// remove it when we're done executing
+						var ret = fn.apply(this, arguments);
+						this._super = tmp;
+
+						return ret;
+					};
+				})(member, body[member]) : body[member];
 		}
 
 		// The dummy class constructor

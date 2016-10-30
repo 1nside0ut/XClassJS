@@ -19,12 +19,12 @@
 
 	var B = A.extend({
 		init: function(id) {
-			this._super.init(id);
+			this._super(id);
 			console.log('B ' + id);
 		},
 
 		hello: function(who) {
-			this._super.hello(who);
+			this._super(who);
 			console.log('B: hello ' + who);
 		},
 
@@ -38,14 +38,13 @@
 
 	var C = B.extend({
 		init: function(id) {
-			this._super._super.init(id); // nice! it calls constructor from A, avoiding B.
+			this._super(id);
 			console.log('C ' + id);
 		},
 
 		hello: function(who) {
-			this._super.hello(who);
+			this._super(who);
 			console.log('C: hello ' + who);
-			this._super.hola(who); // nice! it calls member from A
 			this.hola(who);
 		},
 

@@ -3,7 +3,7 @@
   "shortname": "xclass",
   "title": "XClassJS",
   "description": "An eXtension on simple Class inheritance in JavaScript, from John Resig.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "http://1nside0ut.com/xclass-js/",
   "repository": {
     "type": "git",
