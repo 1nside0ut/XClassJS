@@ -3,9 +3,9 @@
  * 
  * An eXtension on simple Class inheritance in JavaScript, from John Resig.
  * 
- * It upgrades the original code, providing the capability to correctly
- * determine the type of an instance within the inheritance tree, by means of
- * 'an onymous' constructor (in other words, 'init' being a named function
+ * It upgrades the original code from John Resig, providing the capability to 
+ * correctly determine the type of an instance within the inheritance tree, by 
+ * means of 'an onymous' constructor (in other words, 'init' being a named function
  * within a class implementation). It also improves inheritance, providing the 
  * extending classes full access to super class members by means of a new inner
  * field _super (a reference to the parent prototype, instead of a function
