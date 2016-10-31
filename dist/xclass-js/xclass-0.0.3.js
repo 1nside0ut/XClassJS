@@ -48,10 +48,10 @@ var Class;
 				(function(name, member) {
 					if (typeof member === 'function')
 						__super[name] = function() {
-							// _target is a reference to the current object, set only in members
+							// _this is a reference to the current object, set only in members
 							// requiring _super (see below in next closure, where these members
 							// are wrapped to accomplish that goal) 
-							return member.apply(__super._target, arguments);
+							return member.apply(__super._this, arguments);
 						};
 				})(name, _super[name]);
 			}
@@ -68,9 +68,9 @@ var Class;
 							var tmp = this._super;
 
 							// Temporary set _super reference to the super-class prototype and assign 
-							// _target to current instance
+							// _this to current instance
 							this._super = __super;
-							__super._target = this;
+							__super._this = this;
 
 							// The method only need to be bound temporarily, so we
 							// remove it when we're done executing
