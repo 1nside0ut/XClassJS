@@ -3,10 +3,16 @@
  * 
  * _desc
  * 
- * It upgrades the original code, providing the capability to correctly
- * determine the type of an instance within the inheritance tree, by means of
- * 'an onymous' constructor (in other words, 'init' being a named function
- * within a class implementation).
+ * It upgrades the original code from John Resig, providing the capability to 
+ * correctly determine the type of an instance within the inheritance tree, by 
+ * means of 'an onymous' constructor (in other words, 'init' being a named function
+ * within a class implementation). 
+ * 
+ * It also improves inheritance, providing the extending classes full access to 
+ * super class members by means of a new inner field _super (a reference to the 
+ * parent prototype, instead of a function wrapping an overriden method), something 
+ * that was not possible in the original code, which only limited to provide _super 
+ * as a function to the overriden method, but not the full parent class scope.
  * 
  * @version _ver
  * 
@@ -33,28 +39,47 @@ var Class;
 		var prototype = new this();
 		initializing = false;
 
+		// Wrap all _super methods in a new __super object so it can be used
+		// to provide 'direct super-class members invocation', avoiding the need
+		// to use 'call' or 'apply' from an child-class instance. 
+		var __super = {};
+		(function() {
+			for (var name in _super) {
+				(function(name, member) {
+					if (typeof member === 'function')
+						__super[name] = function() {
+							return member.apply(this._target, arguments);
+						};
+				})(name, _super[name]);
+			}
+		})();
+
 		// Copy the properties over onto the new prototype
-		for (var member in body) {
-			// Check if we're overwriting an existing function
-			prototype[member] = typeof body[member] == 'function' &&
-				typeof _super[member] == 'function' &&
-				fnTest.test(body[member]) ? (function(member, fn) {
-					return function() {
-						var tmp = this._super;
+		(function() {
+			for (var name in body) {
+				// Check if we're overwriting an existing function
+				prototype[name] = typeof body[name] == 'function' &&
+					typeof _super[name] == 'function' &&
+					fnTest.test(body[name]) ? (function(member) {
+						return function() {
+							var tmp = this._super;
 
-						// Set temporary _super reference to the super-class
-						this._super = _super;
+							// Temporary set _super reference to the super-class prototype and assign 
+							// _target to current instance
+							this._super = __super;
+							__super._target = this;
 
-						// The method only need to be bound temporarily, so we
-						// remove it when we're done executing
-						var ret = fn.apply(this, arguments);
+							// The method only need to be bound temporarily, so we
+							// remove it when we're done executing
+							var ret = member.apply(this, arguments);
 
-						this._super = tmp;
+							this._super = tmp;
 
-						return ret;
-					};
-				})(member, body[member]) : body[member];
-		}
+							return ret;
+						};
+					})(body[name]) : body[name];
+			}
+		})();
 
 		// The dummy class constructor
 

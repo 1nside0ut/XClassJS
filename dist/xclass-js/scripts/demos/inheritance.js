@@ -1,7 +1,7 @@
 (function() {
 	var A = Class.extend({
 		init: function(id) {
-			console.log('A ' + id);
+			console.log('A: init ' + id);
 		},
 
 		hello: function(who) {
@@ -14,37 +14,46 @@
 
 	});
 
-	var a = new A(1);
-	a.hello('1');
+	var from = 'from a';
+	console.log(from);
+	var a = new A(from);
+	a.hello(from);
 
 	var B = A.extend({
 		init: function(id) {
-			this._super.init.call(this, id);
-			console.log('B ' + id);
+			this._super.init(id);
+			console.log('B: init ' + id);
 		},
 
 		hello: function(who) {
-			this._super.init.call(this, who);
+			this._super.init(who);
 			console.log('B: hello ' + who);
 		},
 
-		ciao: function(who) {
+		hola: function(who) {
 			console.log('B: hola ' + who);
+		},
+
+		ciao: function(who) {
+			console.log('B: ciao ' + who);
 		}
 	});
 
-	b = new B(2);
-	b.hello('2');
+	from = 'from b';
+	console.log(from);
+	b = new B(from);
+	b.hello(from);
 
 	var C = B.extend({
 		init: function(id) {
-			this._super.init.call(this, id);
-			console.log('C ' + id);
+			this._super.init(id);
+			console.log('C: init ' + id);
 		},
 
 		hello: function(who) {
-			this._super.hello.call(this, who);
+			this._super.hello(who);
 			console.log('C: hello ' + who);
+			this._super.hola(who);
 			this.hola(who);
 		},
 
@@ -53,6 +62,8 @@
 		}
 	});
 
-	c = new C(3);
-	c.hello('3');
+	from = 'from c';
+	console.log(from);
+	c = new C(from);
+	c.hello(from);
 })();
