@@ -10,6 +10,10 @@
 
 		hola: function(who) {
 			console.log('A: hola ' + who);
+		},
+
+		hallo: function(who) {
+			console.log('A: hallo ' + who);
 		}
 
 	});
@@ -55,6 +59,8 @@
 			console.log('C: hello ' + who);
 			this._super.hola(who);
 			this.hola(who);
+			this.hallo(who);
+			this._super.hallo(who);
 		},
 
 		hola: function(who) {
