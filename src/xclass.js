@@ -48,6 +48,8 @@ var Class;
 				(function(name, member) {
 					if (typeof member === 'function')
 						__super[name] = function() {
+							// _target is a reference to the current object, set on invocations 
+							// requiring _super (see next closure below).
 							return member.apply(this._target, arguments);
 						};
 				})(name, _super[name]);
