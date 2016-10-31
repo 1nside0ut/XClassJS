@@ -27,7 +27,7 @@
 	var Lion = Animal.extend({
 
 		init: function Lion() {
-			this._super('lion');
+			this._super.init.call(this, 'lion');
 		},
 
 		roar: function() {
@@ -42,7 +42,7 @@
 	var Dog = Animal.extend({
 
 		init: function Dog() {
-			this._super('dog');
+			this._super.init.call(this, 'dog');
 		},
 
 		bark: function() {

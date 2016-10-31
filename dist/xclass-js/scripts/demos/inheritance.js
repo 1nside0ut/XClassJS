@@ -19,12 +19,12 @@
 
 	var B = A.extend({
 		init: function(id) {
-			this._super(id);
+			this._super.init.call(this, id);
 			console.log('B ' + id);
 		},
 
 		hello: function(who) {
-			this._super(who);
+			this._super.init.call(this, who);
 			console.log('B: hello ' + who);
 		},
 
@@ -38,12 +38,12 @@
 
 	var C = B.extend({
 		init: function(id) {
-			this._super(id);
+			this._super.init.call(this, id);
 			console.log('C ' + id);
 		},
 
 		hello: function(who) {
-			this._super(who);
+			this._super.hello.call(this, who);
 			console.log('C: hello ' + who);
 			this.hola(who);
 		},
