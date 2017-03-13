@@ -1,7 +1,7 @@
 /**
  * XClassJS
  * 
- * An eXtension on simple Class inheritance in JavaScript, from John Resig.
+ * Extended 'Simple JavaScript Inheritance' (originally from John Resig)
  * 
  * It upgrades the original code from John Resig, providing the capability to 
  * correctly determine the type of an instance within the inheritance tree, by 
@@ -14,7 +14,7 @@
  * that was not possible in the original code, which only limited to provide _super 
  * as a function to the overriden method, but not the full parent class scope.
  * 
- * @version 0.0.3
+ * @version 0.1.0
  * 
  * @author manuelbarzi
  */
