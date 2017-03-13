@@ -1,75 +1,69 @@
 (function() {
 	var A = Class.extend({
 		init: function(id) {
-			console.log('A: init ' + id);
+			this.id = id;
+			console.log(id + ': init (from A)');
 		},
 
 		hello: function(who) {
-			console.log('A: hello ' + who);
+			console.log(this.id + ': hello ' + who + '! (from A)');
 		},
 
 		hola: function(who) {
-			console.log('A: hola ' + who);
+			console.log(this.id + ': hola ' + who + '! (from A)');
 		},
 
 		hallo: function(who) {
-			console.log('A: hallo ' + who);
+			console.log(this.id + ': hallo ' + who + '! (from A)');
 		}
-
 	});
 
-	var from = 'from a';
-	console.log(from);
-	var a = new A(from);
-	a.hello(from);
+	var a = new A('A');
+	a.hello('world');
 
 	var B = A.extend({
 		init: function(id) {
 			this._super.init(id);
-			console.log('B: init ' + id);
+			console.log(id + ': init (from B)');
 		},
 
 		hello: function(who) {
-			this._super.init(who);
-			console.log('B: hello ' + who);
+			console.log(this.id + ': hello ' + who + '! (from B)');
 		},
 
 		hola: function(who) {
-			console.log('B: hola ' + who);
+			console.log(this.id + ': hola ' + who + '! (from B)');
 		},
 
 		ciao: function(who) {
-			console.log('B: ciao ' + who);
+			console.log(this.id + ': ciao ' + who + '! (from B)');
 		}
 	});
 
-	from = 'from b';
-	console.log(from);
-	b = new B(from);
-	b.hello(from);
+	var b = new B('B');
+	b.hello('world');
 
 	var C = B.extend({
 		init: function(id) {
 			this._super.init(id);
-			console.log('C: init ' + id);
+			console.log(id + ': init (from C)');
 		},
 
 		hello: function(who) {
 			this._super.hello(who);
-			console.log('C: hello ' + who);
+			console.log(this.id + ': hello ' + who + '! (from C)');
 			this._super.hola(who);
 			this.hola(who);
 			this.hallo(who);
 			this._super.hallo(who);
+			this.ciao(who);
 		},
 
 		hola: function(who) {
-			console.log('C: hola ' + who);
+			console.log(this.id + ': hola ' + who + '! (from C)');
 		}
 	});
 
-	from = 'from c';
-	console.log(from);
-	c = new C(from);
-	c.hello(from);
+	var c = new C('C');
+	c.hello('world');
 })();
